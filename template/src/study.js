@@ -30,6 +30,7 @@ var finalResultsTemplate = require("../templates/resultScore.html")
 var loadingTemplate = require("../templates/loading.html");
 var progressTemplate = require("../templates/progress.html");
 var funFact = require("../templates/funFact.html");
+var prolificTemplate = require("../templates/prolificId.html");
 var i18n = require("../js/i18n");
 require("./jspsych-display-info");
 require("./jspsych-display-slide");
@@ -384,6 +385,22 @@ module.exports = (function() {
 
   var actualIndexNonVisual0 = distractorsNonVisual0.indexOf(qs0["answer" + nonVisualPick0].trim())
   var actualIndexVisual0 = distractorsVisual0.indexOf(qs0["answer" + visualPick0].trim())
+
+  timeline.push({
+    type: "display-slide",
+    display_element: $("#prolific"),
+    name: "prolific",
+    template: prolificTemplate({
+      pageTitle: article1.pageTitle
+    }),
+    finish: function() {
+      jsPsych.data.addProperties({prolificID: $("input[name=prolificID]").val()});
+      LITW.data.submitStudyData({
+        prolificID: $("input[name=prolificID]").val(),
+      });
+      console.log($("input[name=prolificID]").val());
+    }
+  });
 
   // progress counter 1
   timeline.push({

@@ -16,6 +16,14 @@
 	visibility: hidden;
 }
 
+#pNext {
+	visibility: hidden;
+}
+
+#pIDLabel {
+	text-align: center;
+}
+
 #artImage {
 	visibility: hidden;
 }
@@ -155,6 +163,16 @@ polyline {
 	color: green;
 }
 
+.pSubmit {
+	border: none;
+    background-color: inherit;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+	color: green;
+}
+
 .breakImage{
 	width: 40%
 }
@@ -212,6 +230,11 @@ polyline {
 #submit {
 	visibility: hidden
 }
+
+#pSubmit {
+	visibility: visible
+}
+
 
 #knowledgeQWarning {
 	visibility: hidden;
