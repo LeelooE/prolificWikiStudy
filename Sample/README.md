@@ -1,0 +1,2 @@
+# Wiki Images Sample
+This sample (displayOneTrial.py) takes a number n and "t/f" as command line arguments. It first generates a web page (imageAndArticle.html) displaying the sections of the Wikipedia article indicated in the n-th row of questions.csv. If the user enters "t/T/true/True" as the command line argument, the image will be displayed with the article. Then five question pages are generated (with no functionality in terms of response feedback) that the user can click through.

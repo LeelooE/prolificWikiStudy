@@ -1,0 +1,339 @@
+
+<div id="fillerDiv" class={{average}}></div>
+<div id="firstP" class={{current}}></div>
+<h2 class="bolded-blue" id="resultsHeadline">Congrats! You know at least {{percentage}}% of Wikipedia!</h2>
+<div id="resultsContainer">
+    <div id="resultsPragraphs">
+        {{#if nine}}<!--6 to 9-->
+            <p id="topHeading" class={{prediction}}>
+                Great job, today you learned about "{{articleOne}}", "{{articleTwo}}", 
+                and "{{articleThree}}"!
+            </p>
+            <p id="secondHeading" class={{predictedYears}}>
+                It took you {{minutes}} minutes and {{seconds}} seconds to
+                learn these Wikipedia articles, and it would take you another {{hours}}
+                hours to learn the rest of Wikipedia.
+            </p>
+            <p>
+                Wikipedia has more knowledge than anyone can remember and we're glad 
+                you gave it a try!
+            </p>
+        {{else}} 
+            {{#if six}}<!--3 to 6-->
+                <p id="topHeading" class={{prediction}}>
+                    Today you learned about {{articleOne}}, {{articleTwo}}, and {{articleThree}}! 
+                </p>
+                <p id="secondHeading" class={{predictedYears}}>
+                    It took you {{minutes}} minutes and {{seconds}} seconds to
+                    cover these Wikipedia articles, and it would take you another {{hours}}
+                    hours to see the rest of Wikipedia.
+                </p>
+                <p>
+                    Wikipedia has more knowledge than anyone can remember and we're glad 
+                    you gave it a try!
+                </p>
+            {{else}}<!--0 to 3-->
+                <p id="topHeading" class={{prediction}}>
+                    This was a difficult task, today you saw articles about {{articleOne}}, {{articleTwo}}, 
+                    and {{articleThree}}!
+                </p>
+                <p id="secondHeading" class={{predictedYears}}>
+                    It took you {{minutes}} minutes and {{seconds}} seconds to
+                    cover these Wikipedia articles, and it would take you another {{hours}}
+                    hours to see the rest of Wikipedia.
+                </p>
+                <p id="lessThanFour">
+                    You may have been in a rush skimming the 
+                    articles, so perhaps try later when you have more time!
+                </p>
+            {{/if}}
+        {{/if}}
+        <p>
+            Did you want to read more about the random fun facts mentioned in this survey?
+            <a 
+            class="link" >
+                Follow this link for more fun facts.
+            </a>
+        </p>
+        <p>
+            Did you like the survey? See if you can learn something new!
+            <a 
+            href="https://labinthewild.org/studies/wikipedia/?LITW_PID={{id}}" 
+            target="_self" 
+            class="sessionFlow" >
+                Take the survey again.
+            </a>
+        </p>
+        <!-- <p>Like our facebook page, we will be updating the study with more Wikipedia articles!</p> -->
+    </div>
+    <div id="charts">
+        <div id="nested">
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+<script>
+    $("a.link").on("click",function(){
+         window.open('https://en.wikipedia.org/wiki/Wikipedia:Unusual_articles','_blank');
+         LITW.data.submitStudyData({clickedFunFactLink: true});
+     });
+    $(document).ready(function () {
+            var predictedYears = parseInt($("#secondHeading").attr('class'))
+            var prediction = parseInt($("#topHeading").attr('class'))
+            var average = parseInt($("#fillerDiv").attr('class'))
+            var current = parseInt($("#firstP").attr('class'))
+            var otherPrediction = 100 - prediction
+            var otherAverage = 100 - average
+            var otherCurrent = 100 - current
+            var currentData = [{name: current, value:current, color:"#66c2a5"},{name: "Wikipedia", value:otherCurrent, color: "#e6e6e6"}]
+            var predictionData = [{name: prediction, value:prediction, color: "#fc8d62"},{name: "Wikipedia", value:otherPrediction, color: "#e6e6e6"}]
+            var averageData = [{name: average, value:average, color:"#8da0cb"},{name: "Wikipedia", value:otherAverage, color: "#e6e6e6"}]
+            if(current < 1) {
+                current = 1
+                otherCurrent = 99
+                currentData = [{name: "<" + current, value:current, color:"#66c2a5"},{name: "Wikipedia", value:otherCurrent, color: "#e6e6e6"}]
+            }
+            if(prediction < 1) {
+                prediction = 1
+                otherPrediction = 99
+                predictionData = [{name: "<" + prediction, value:prediction, color: "#fc8d62"},{name: "Wikipedia", value:otherPrediction, color: "#e6e6e6"}]
+            }
+            if(average < 1) {
+                average = 1
+                otherAverage = 99
+                averageData = [{name: "<" + average, value:average, color:"#8da0cb"},{name: "Wikipedia", value:otherAverage, color: "#e6e6e6"}]
+            }
+            makeNestedPieChart(currentData, predictionData, averageData, "#nested", predictedYears)
+    });
+    
+    function makeNestedPieChart(dataOne, dataTwo, dataThree, divName, predictedYears) {
+        var width = 500;
+        var height = 500;
+
+        var radius1 = Math.min(width, height) / 2;
+        var radius2 = radius1 - 50;
+        var radius3 = radius2 - 50;
+
+        var arc1 = d3.arc()
+          .innerRadius(radius1 - 25)  
+          .outerRadius(radius1);
+        var arc2 = d3.arc()
+          .innerRadius(radius2 - 25)  
+          .outerRadius(radius2);
+        var arc3 = d3.arc()
+          .innerRadius(radius3 - 25)  
+          .outerRadius(radius3);
+
+        const svg = d3.select(divName).append("svg")
+            .attr("viewBox", [-375, -220, 950, 550]);
+
+        var svg1 = svg.append('g')
+          .attr('transform', 'translate(-100, 40)');
+        var svg2 = svg.append('g')
+          .attr('transform', 'translate(-100, 40)');
+        var svg3 = svg.append('g')
+          .attr('transform', 'translate(-100, 40)');
+        
+        var squareOne = svg.append('g')
+          .attr('transform', 'translate(180, -75)');
+        var squareTwo = svg.append('g')
+          .attr('transform', 'translate(180, -25)');
+        var squareThree = svg.append('g')
+          .attr('transform', 'translate(180, 60)');
+
+        squareOne.append("rect")
+            .attr("rx",0)
+            .attr("ry",0)
+            .attr("x",0)
+            .attr("y",0)
+            .attr("width",25)
+            .attr("height",25)
+            .attr("stroke","white")
+            .attr("fill","#66c2a5");
+
+        squareTwo.append("rect")
+            .attr("rx",0)
+            .attr("ry",0)
+            .attr("x",0)
+            .attr("y","1.15em")
+            .attr("width",25)
+            .attr("height",25)
+            .attr("stroke","white")
+            .attr("fill","#fc8d62");
+
+        squareThree.append("rect")
+            .attr("rx",0)
+            .attr("ry",0)
+            .attr("x",0)
+            .attr("y","1.15em")
+            .attr("width",25)
+            .attr("height",25)
+            .attr("stroke","white")
+            .attr("fill","#8da0cb");
+        
+        squareOne.append("text")
+            .attr("font-weight", "bold")
+            .attr("fill", "black") 
+            .attr("dy", "1.05em")
+            .attr("dx", "1.75em")
+            .attr("font-family", "sans-serif")
+            .attr("font-size", 18)
+            .attr("text-anchor", "right")
+            .text("How much Wikipedia you covered today");
+            
+        squareTwo.append("text")
+            .attr("font-weight", "bold")
+            .attr("fill", "black") 
+            .attr("dy", "1.05em")
+            .attr("dx", "1.75em")
+            .attr("font-family", "sans-serif")
+            .attr("font-size", 18)
+            .attr("text-anchor", "right")
+            .text("How much Wikipedia you’d see if it");
+        squareTwo.append("text")
+            .attr("font-weight", "bold")
+            .attr("fill", "black") 
+            .attr("dy", "2.25em")
+            .attr("dx", "1.75em")
+            .attr("font-family", "sans-serif")
+            .attr("font-size", 18)
+            .attr("text-anchor", "right")
+            .text("was your job to skim it 8hrs a day for");
+        
+        squareTwo.append("text")
+            .attr("font-weight", "bold")
+            .attr("fill", "black") 
+            .attr("dy", "3.45em")
+            .attr("dx", "1.75em")
+            .attr("font-family", "sans-serif")
+            .attr("font-size", 18)
+            .attr("text-anchor", "right")
+            .text("the next " + predictedYears + " years");
+
+        squareThree.append("text")
+            .attr("font-weight", "bold")
+            .attr("fill", "black") 
+            .attr("dy", "1.05em")
+            .attr("dx", "1.75em")
+            .attr("font-family", "sans-serif")
+            .attr("font-size", 18)
+            .attr("text-anchor", "right")
+            .text("The average participant's estimate");
+
+        squareThree.append("text")
+            .attr("font-weight", "bold")
+            .attr("fill", "black") 
+            .attr("dy", "2.25em")
+            .attr("dx", "1.75em")
+            .attr("font-family", "sans-serif")
+            .attr("font-size", 18)
+            .attr("text-anchor", "right")
+            .text("of seeing Wikipedia while skimming");
+
+        squareThree.append("text")
+            .attr("font-weight", "bold")
+            .attr("fill", "black") 
+            .attr("dy", "3.45em")
+            .attr("dx", "1.75em")
+            .attr("font-family", "sans-serif")
+            .attr("font-size", 18)
+            .attr("text-anchor", "right")
+            .text("it 8hrs a day for 50 years");
+        
+        var pie = d3.pie()
+            .sort(null)
+            .value(d => d.value)
+        
+        const arcsOne = pie(dataOne);
+        const arcsTwo = pie(dataTwo);
+        const arcsThree = pie(dataThree);
+        
+        var path1 = svg1.append("g")
+            .attr("stroke", "white")
+            .selectAll("path")
+            .data(arcsOne)
+            .join("path")
+            .attr("fill", d => d.data.color)
+            .attr("d", arc1)
+
+        var path2 = svg2.append("g")
+            .attr("stroke", "white")
+            .selectAll("path")
+            .data(arcsTwo)
+            .join("path")
+            .attr("fill", d => d.data.color)
+            .attr("d", arc2)
+        
+        var path3 = svg3.append("g")
+            .attr("stroke", "white")
+            .selectAll("path")
+            .data(arcsThree)
+            .join("path")
+            .attr("fill", d => d.data.color)
+            .attr("d", arc3)
+        
+        svg1.append("text")
+            .attr("font-weight", "bold")
+            .attr("fill", "black") 
+            .attr("dy", ".35em")
+            .attr("font-family", "sans-serif")
+            .attr("font-size", 22)
+            .attr("text-anchor", "middle")
+            .text("Entire Wikipedia");
+        
+        svg1.append('g').classed('labels',true);
+
+        svg2.append('g').classed('labels',true);
+
+        svg3.append('g').classed('labels',true);
+
+        var label1 = svg1.select('.labels').selectAll('text')
+            .data(arcsOne)
+            .enter().append('text')
+            .attr('dy', '.35em')
+            .attr('dx', '-2.5em')
+            .attr("text-anchor", "start")
+            .html(function(d) {
+                if (d.data.name != "Wikipedia") {
+                    return d.data.name + "%";
+                }
+            })
+            .attr("transform", function(d){
+                return "translate(0,-237.38280808686125)";
+            })
+
+        var label2 = svg2.select('.labels').selectAll('text')
+            .data(arcsTwo)
+            .enter().append('text')
+            .attr('dy', '1.9em')
+            .attr('dx', '-2.6em')
+            .attr("text-anchor", "start")
+            .html(function(d) {
+                if (d.data.name != "Wikipedia") {
+                    return d.data.name + "%";
+                }
+            })
+            .attr("transform", function(d){
+                return "translate(0,-210)";
+            })
+
+        var label3 = svg3.select('.labels').selectAll('text')
+            .data(arcsThree)
+            .enter().append('text')
+            .attr('dy', '3.5em')
+            .attr('dx', '-2.6em')
+            .attr("text-anchor", "start")
+            .html(function(d) {
+                if (d.data.name != "Wikipedia") {
+                    return d.data.name + "%";
+                }
+            })
+            .attr("transform", function(d){
+                return "translate(0,-187)";
+            })
+
+    }
+    function midAngle(d) { return d.startAngle + (d.endAngle - d.startAngle) / 2; }
+</script>

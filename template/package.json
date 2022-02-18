@@ -1,0 +1,28 @@
+{
+  "name": "litw-privacy-iot",
+  "version": "0.1.0",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "expose-loader": "^0.7.1",
+    "handlebars": "^4.7.6",
+    "handlebars-loader": "^1.4.0",
+    "jquery": "2.2.0",
+    "jquery-ui-bundle": "^1.11.4",
+    "webpack": "^2.2.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack -p",
+    "develop": "webpack --watch",
+    "devserver-php": "php -S localhost:8080",
+    "devserver-python": "python3 -m http.server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/LITW-core/litw-studytemplate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/LITW-core/litw-studytemplate#readme",
+  "description": ""
+}

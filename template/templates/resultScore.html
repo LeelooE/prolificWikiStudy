@@ -1,0 +1,39 @@
+
+<div id="fillerDiv" ></div>
+<div id="firstP"></div>
+<img src={{resultScore}} class="resultArtImg"></img>
+<h2 class="bolded-blue" id="resultsHeadline">{{quote}}</h2>
+</br>
+<p>The average WikiKnowledgeScore is {{avgResultScore}}.</p>
+<p id="topHeading">
+    Great job, today you learned about "{{articleOne}}", "{{articleTwo}}",
+    and "{{articleThree}}"! Now you know at least {{percentage}}% of Wikipedia.
+</p>
+<p>
+    Did you like the survey? See if you can learn something new!
+    <a
+            href="https://labinthewild.org/studies/wikipedia/?LITW_PID={{id}}"
+            target="_self"
+            class="sessionFlow" >
+        Take the survey again.
+    </a>
+</p>
+<p>
+    Did you want to read more about the random fun facts mentioned in this survey?
+    <a
+            class="link" >
+        Follow this link for more fun facts.
+    </a>
+</p>
+
+<br>
+<br>
+<script>
+    $("a.link").on("click",function(){
+        window.open('https://en.wikipedia.org/wiki/Wikipedia:Unusual_articles','_blank');
+        LITW.data.submitStudyData({clickedFunFactLink: true});
+    });
+    $(document).ready(function () {
+        
+    });
+</script>

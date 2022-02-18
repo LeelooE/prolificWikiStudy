@@ -1,0 +1,535 @@
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Page Title</th>
+      <th>Section Titles to Display (comma separated)</th>
+      <th>URL of image to display</th>
+      <th>Question 1: Text, no need for image</th>
+      <th>Answer 1</th>
+      <th>Distractors 1 (comma separated)</th>
+      <th>Question 2: Text, no need for image</th>
+      <th>Answer 2</th>
+      <th>Distractors 2 (comma separated)</th>
+      <th>Question 3: Text, physical description</th>
+      <th>Answer 3</th>
+      <th>Distractors 3 (comma separated)</th>
+      <th>Question 4: Text, physical description</th>
+      <th>Answer 4</th>
+      <th>Distractors 4  (comma separated)</th>
+      <th>Image question</th>
+      <th>Image answer url</th>
+      <th>Image distractor 1</th>
+      <th>Image distractor 2</th>
+      <th>Image distractor 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>David_(Donatello)</td>
+      <td>Main,The_bronze_David</td>
+      <td>&lt;img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Florence_-_David_by_Donatello.jpg" width="60"&gt;</td>
+      <td>Where is Donatello’s David located?\n\n</td>
+      <td>Milan</td>
+      <td>Florence, Venice, Rome</td>
+      <td>Who commissioned the statue according to scholars?</td>
+      <td>Cosimo de’ Medici</td>
+      <td>Pope Sixtus, Lorenzo de’ Medici, Michelozzo</td>
+      <td>What material is Donatello’s David made of?</td>
+      <td>bronze</td>
+      <td>marble,gold,brass</td>
+      <td>Is David in Donatello’s sculpture smiling?</td>
+      <td>yes</td>
+      <td>no</td>
+      <td>Which one is Donatello's David?</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/9/94/Bronze_David_by_Donatello-Bargello-4.jpg</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/3/3b/Augustins_-_David_by_Antonin_Merci%C3%A9_%28D_2005_1%29.jpg</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/a/a0/%27David%27_by_Michelangelo_Fir_JBU002.jpg</td>
+      <td>https://en.wikipedia.org/wiki/David_(Verrocchio)#/media/File:David,_Andrea_del_Verrocchio,_ca._1466-69,_Bargello_Florenz-01.jpg</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Pincho</td>
+      <td>Main,Basque_Pintxo</td>
+      <td>&lt;img src="https://en.wikipedia.org/wiki/Pincho#/media/File:Bar_de_pinchos_Donosti_01.JPG" width="60"&gt;</td>
+      <td>In what part of Spain are pinchos traditionally consumed?</td>
+      <td>North</td>
+      <td>South, East, West</td>
+      <td>Where are pinchos typically consumed?</td>
+      <td>Taverns/bars</td>
+      <td>At home, On the street, In a restaurant</td>
+      <td>What is the usual base of a pincho?</td>
+      <td>Sliced bread</td>
+      <td>Fruit, Potato cake, Corn patty</td>
+      <td>Why are they called "pinchos"?</td>
+      <td>Because of the toothpick holding them together</td>
+      <td>Because they are bite-sized, Because they are spicy, Because they are eaten with alcohol</td>
+      <td>Which is a pincho?</td>
+      <td>https://en.wikipedia.org/wiki/Pincho#/media/File:Pinchos_bermeo_2.JPG</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/c/cf/Seven_cheese_platter_in_party.jpg</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/e/e0/Hors_d%27oeuvre_by_Auriole_Potter.jpg</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/7/78/Finger_food-_aubergine%27s_caviar_and_mint_cherry_tomatoes_%2829402673200%29.jpg</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Caiman</td>
+      <td>Main, Description, Behavior</td>
+      <td>&lt;img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Caiman_yacare.jpg" width="60"&gt;</td>
+      <td>Which is the largest caiman species in the world?</td>
+      <td>Black Caiman</td>
+      <td>Spectacled Caiman, Yacare Caiman, Broad-Snouted Caiman</td>
+      <td>Which of the following is a natural predator of the caiman?</td>
+      <td>Anaconda</td>
+      <td>Leopard, Gorilla, Hippo</td>
+      <td>How do a caiman's teeth compare to an alligator's teeth?</td>
+      <td>They are longer and slenderer</td>
+      <td>They are shorter and sharper, They are wider and duller, They are smaller and more numerous</td>
+      <td>What kind of habitat does the caiman usually live in?</td>
+      <td>Watery jungle</td>
+      <td>Dry plains, Open ocean, Rocky beaches</td>
+      <td>Which is a caiman?</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/6/66/Yacare_caiman_%28Caiman_yacare%29_2.jpg</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/0/03/American_Alligator.jpg</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/a/a4/Biscayne_American_Crocodile_NPS1.jpg</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/f/f0/Mugger_crocodile_%28Crocodylus_palustris%29.jpg</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Pagoda</td>
+      <td>Main, History</td>
+      <td>&lt;img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Horyu-ji09s3200.jpg" width="60"&gt;</td>
+      <td>What did pagodas originally house?</td>
+      <td>sacred relics</td>
+      <td>weapons, currency, food stores</td>
+      <td>What is the origin of the pagoda?</td>
+      <td>Stupa</td>
+      <td>Vihara, Chaitya</td>
+      <td>What architectural feature characterizes the pagoda?</td>
+      <td>Gradual tiered eves</td>
+      <td>Wooden structure, Symmetrical tiling and decorations, Sprawling single-story construction</td>
+      <td>How many stories does a pagoda usually have?</td>
+      <td>An odd number</td>
+      <td>An even number, A lucky number, A royal number</td>
+      <td>Which is a pagoda?</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/2/2d/Sun_and_Moon_Pagodas_Guilin_November_2017_HDR.jpg</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/5/50/Great_stupa_in_Mindroling.jpg</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/0/03/Kelenteng_Vihara_Buddha_Prabha.jpg</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/a/a4/Cave_26%2C_Ajanta.jpg</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Brú_na_Bóinne</td>
+      <td>Main, Description</td>
+      <td>&lt;img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Newgrange.JPG" width="60"&gt;</td>
+      <td>What period do the major structures date to?</td>
+      <td>Neolithic period</td>
+      <td>Mesolithic period, Bronze Age, Iron Age</td>
+      <td>What does "Brú na Bóinne" mean?</td>
+      <td>Palace of the Boyne</td>
+      <td>Bend of the Boyne, Tomb of the Boyne, Temple of the Boyne</td>
+      <td>What is the name of the central mound of the Boyne Valley passage grave cemetery?</td>
+      <td>Newgrange</td>
+      <td>Knowth, Dowth, Townleyhall</td>
+      <td>What kind of solar alignment do the Newgrange and Dowth passage graves have?</td>
+      <td>Winter solstice</td>
+      <td>Spring equinox, Summer solstice, Autumn equinox</td>
+      <td>Which is the Newgrange passage grave?</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/6/6f/Newgrange_at_a_distance.jpg</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/4/44/Knowth01.JPG</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/1/10/Dowth.jpg</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/8/8c/Passage_tomb%2C_Townleyhall%2C_Co._Louth_-_geograph.org.uk_-_1078235.jpg</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Taos_Pueblo</td>
+      <td>Main, History</td>
+      <td>&lt;img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Taos_Pueblo_2017-05-05.jpg" width="60"&gt;</td>
+      <td>Where do most archeologists believe that the Taos Indigenous People came from?</td>
+      <td>Four Corners</td>
+      <td>Northern Mexico, California, Texas</td>
+      <td>What was the name of the first Catholic church constructed in the pueblo?</td>
+      <td>San Geronimo</td>
+      <td>San Miguel, Santo Domingo, San Juan Bautista</td>
+      <td>President Theodore Roosevelt took 48,000 acres of the Pueblo's mountain land and designated it as what?</td>
+      <td>Carson National Forest</td>
+      <td>Cibola National Forest, Gila National Forest, Santa Fe National Forest</td>
+      <td>What does the Pueblo's website name as the most important event in its history?</td>
+      <td>Reacquisition of Blue Lake</td>
+      <td>Migration of the Ancestral Puebloans, Pueblo Revolt of 1680, Arrival of Spanish visitors in 1540</td>
+      <td>Which is the Taos Pueblo?</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/9/95/USA_09669_Taos_Pueblo_Luca_Galuzzi_2007.jpg</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/e/ed/Mesa_verde_cliff_palace_close.jpg</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/b/ba/San_Francisco_de_Asis_Mission_Church.JPG</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/c/c4/The_Cliffs_at_Puye_Cliff_Dwellings_in_Espanola%2C_New_Mexico.jpg</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Carolina_Reaper</td>
+      <td>Main, Pungency, Potential_for_severe_headache</td>
+      <td>&lt;img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Carolina_Reaper_pepper_pods.jpg" width="60"&gt;</td>
+      <td>What is the name of the previous record holder for "hottest chili pepper in the world"?</td>
+      <td>Trinidad Scorpian "Butch T"</td>
+      <td>Naga Viper, Ghost Pepper, Dragon's Breath</td>
+      <td>How many Scotville Heat Units (SHU) did the hottest individual Carolina Reaper measure?</td>
+      <td>2.2 million SHU</td>
+      <td>1.6 million SHU, 4 million SHU, 500,000 SHU</td>
+      <td>The Carolina Reaper has been described as having what kind of taste?</td>
+      <td>fruity</td>
+      <td>sour, bitter, salty</td>
+      <td>What kind of headache did a 34-year-old man report after consuming a Carolina Reaper pepper?</td>
+      <td>thunderclap headache</td>
+      <td>cluster headache, migraine headache, tension headache</td>
+      <td>Which is a Carolina Reaper pepper?</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/0/03/Carolina_Reaper_pepper_pods.jpg</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/8/8b/Bhoot_Jolokia_%28_Ghost_Chili_pepper_%29.jpg</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/d/d9/Trinidad_Scorpion_Butch_T_Pepper.JPG</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/9/9c/Komodo_Dragon_Chili.jpg</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Akara</td>
+      <td>Main, History</td>
+      <td>&lt;img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Acaraje-Baiana.jpg" width="60"&gt;</td>
+      <td>Acarajé is made from cooked and mashed black eyed peas deep-fried in what kind of oil?</td>
+      <td>palm</td>
+      <td>vegetable, olive, sesame</td>
+      <td>What is the difference between acarajé and abara?</td>
+      <td>Abara's ingredients are boiled while acarajé is deep-fried</td>
+      <td>Abara is vegetarian while acarajé contains meat, Abara is a religious offering to the gods in the Candomblé religion, Abara is served with hot peppers and is therefore very spicy while acarajé is not</td>
+      <td>In the Yoruba culture, akara was specially prepared when what event occurred?</td>
+      <td>Death of a person who has come of Age</td>
+      <td>Wedding, Birth of a child, A young person has their rite of passage</td>
+      <td>In which state is the dish traditionally encountered in Brazil?</td>
+      <td>Bahia</td>
+      <td>Minas Gerais, Rio de Janeiro, São Paulo</td>
+      <td>Which is akara?</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/b/bb/Beans_Ball-Akara.jpg</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/0/03/Westweg_Louisiana_September_2017_37.jpg</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/e/ee/Arancini_002.jpg</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/0/05/Falafel_balls.jpg</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Ingapirca</td>
+      <td>Main, History</td>
+      <td>&lt;img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Ecuador_ingapirca_inca_ruins.jpg" width="60"&gt;</td>
+      <td>Who originally settled the area of Ingapirca?</td>
+      <td>Cañari</td>
+      <td>Inca, Quichua, Quitu</td>
+      <td>What modern-day Ecuadorian city did the Inca Túpac Yupanqui improve as a political strategy to conquer the indigenous people of Ingapirca?</td>
+      <td>Cuenca</td>
+      <td>Quito, El Tambo, Riobamba</td>
+      <td>What structure was built in Ingapirca under the Inca Huayna Capac?</td>
+      <td>astronomical observatory</td>
+      <td>school, armory, monument statue to the Inca</td>
+      <td>What does it mean that the Temple of the Sun was constructed in the "Inca way"?</td>
+      <td>without mortar</td>
+      <td>folder corners, quarry-marks for splitting stone, metal block-ties</td>
+      <td>Which is Ingapirca?</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/0/03/Ecuador_ingapirca_inca_ruins.jpg</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/7/71/Machu_Picchu%2C_Per%C3%BA%2C_2015-07-30%2C_DD_47.JPG</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/2/2a/Winawayna_purification_and_healing_sanctuary_on_the_Machu_Picchu_trail_-_panoramio.jpg</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/1/1f/N2_Peru_ruins.jpg</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Café_du_Monde</td>
+      <td>Main, History</td>
+      <td>&lt;img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Beignets_and_Caf%C3%A9_au_Lait_at_Caf%C3%A9_du_Monde%2C_New_Orleans.jpg" width="60"&gt;</td>
+      <td>What special ingredient is added to the coffee at Café du Monde?</td>
+      <td>chicory</td>
+      <td>endive, dandelion, maca</td>
+      <td>Who brought beignets to New Orleans in the 18th century?</td>
+      <td>Arcadians</td>
+      <td>French, Haitians, Spanish</td>
+      <td>What are beignets served with at Café du Monde?</td>
+      <td>Powdered sugar</td>
+      <td>jam, maple syrup, fresh fruit</td>
+      <td>On which street in the French Quarter is Café du Monde located?</td>
+      <td>Decatur</td>
+      <td>Bourbon, Chartres, Dauphine</td>
+      <td>Which is a beignet?</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/4/4c/BeignetsPowderdSugarCDM.jpg</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/d/d9/Funnel_cake_20040821_172200_1.1655x1275.jpg</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/e/e3/Frittelle_di_carnevale.jpg</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/6/69/Pastry-Donut-Jelly-Powdered.jpg</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>El_Panecillo</td>
+      <td>Main, Statue</td>
+      <td>&lt;img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Virgen_de_Quito_Panecillo_03.jpg" width="60"&gt;</td>
+      <td>What religious order commissioned the building of the Virgin of El Panecillo?</td>
+      <td>Oblates</td>
+      <td>Franciscans, Dominicans, Jesuits</td>
+      <td>What is the Virgin of El Panecillo made of?</td>
+      <td>aluminium</td>
+      <td>tin, silver, iron</td>
+      <td>What aspect of the Virgin of El Panecillo is considered untraditional?</td>
+      <td>She has wings</td>
+      <td>She is stepping on a snake, She is dancing, She is not seated</td>
+      <td>According to Jesuit historian Juan de Velasco, what was located on top of El Panecillo before the arrival of the Spanish?</td>
+      <td>Temple</td>
+      <td>Throne, Tomb, Oven</td>
+      <td>Which is the Virgen of El Panecillo?</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/0/01/Virgen_de_El_Panecillo%2C_Quito%2C_Ecuador%2C_2015-07-22%2C_DD_24.JPG</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/c/c0/Monumento_Virgen_de_La_Paz_II.jpg</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/2/25/EDSAShrinejf0089_13.JPG</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/8/8e/Kosice_41.jpg</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Avenue_of_the_Baobabs</td>
+      <td>Main, Description</td>
+      <td>&lt;img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Walking_the_Avenue_of_the_Baobabs.jpg" width="60"&gt;</td>
+      <td>How many Baobab trees are in the grove lining the road?</td>
+      <td>20-25</td>
+      <td>10-15, 40-50, 80-100</td>
+      <td>What does renala, the local term for baobab tree, mean in Malagasy?</td>
+      <td>Mother of the forest</td>
+      <td>King of the forest, Daughter of the forest, Lover of the forest</td>
+      <td>Why has the dense tropical forest that the baobab trees used to be a part of disappeared?</td>
+      <td>deforestation</td>
+      <td>wildfires, drought, invasive diseases</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Fluorite</td>
+      <td>Main, History and etymology, Color</td>
+      <td>&lt;img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/3192M-fluorite1.jpg" width="60"&gt;</td>
+      <td>What is an industrial use of fluorite?</td>
+      <td>Flux</td>
+      <td>Flame retardent, Cement, Hardening alloy</td>
+      <td>Where is the largest deposit of fluorite?</td>
+      <td>South Africa</td>
+      <td>Yemen, China, Brazil</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Which is an example of fluorite?</td>
+      <td>https://commons.wikimedia.org/wiki/File:Fluorite_Le_Beix_MNHN_Min%C3%A9ralogie.jpg</td>
+      <td>https://commons.wikimedia.org/wiki/File:Halit_(NaCl)_-_Kopalnia_soli_Wieliczka,_Polska.jpg</td>
+      <td>https://commons.wikimedia.org/wiki/File:Atacamite-235102.jpg</td>
+      <td>https://commons.wikimedia.org/wiki/File:Bischofite_-_Antofagasta.JPG</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Shingle Style Architecture</td>
+      <td>Main, Architecture</td>
+      <td>&lt;img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Kragsyde.jpg" width="60"&gt;</td>
+      <td>Where is Shingle style architecture in the United States most often found?</td>
+      <td>New England</td>
+      <td>Midwest, Pacific Northwest, Southwest</td>
+      <td>The shingle style was a response to which architectural movement?</td>
+      <td>Eastlake style</td>
+      <td>Modernist, Gothic, Colonial</td>
+      <td>What feature was common for shingle style houses?</td>
+      <td>Horizontal continuity</td>
+      <td>Vertical continuity, ornamentation, columns</td>
+      <td>What is a famous example of the shingle style house?</td>
+      <td>Kragsyde</td>
+      <td>Saint Peter's By-The-Sea, Carson Mansion, Vaile Mansion</td>
+      <td>Which is an example of the shingle style?</td>
+      <td>https://commons.wikimedia.org/wiki/File:HorseshoePostcard.jpg</td>
+      <td>https://en.wikipedia.org/wiki/File:William_S._Clarke_House_2.JPG</td>
+      <td>https://en.wikipedia.org/wiki/File:Saint_Peter%27s-By-The-Sea_Episcopal_Church,_Cape_May_Point,_NJ.jpg</td>
+      <td>https://en.wikipedia.org/wiki/File:Herman_C._Timm_House.jpg</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Gujia</td>
+      <td>Main, Food</td>
+      <td>&lt;img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Gujhia.JPG" width="60"&gt;</td>
+      <td>Which country is Gujia from?</td>
+      <td>India</td>
+      <td>Pakistan, Yemen, Lithuania</td>
+      <td>What is a common filling for Gujia?</td>
+      <td>Dried fruit</td>
+      <td>Beef, mung bean, peas</td>
+      <td>What shape is a Gujia?</td>
+      <td>Half moon</td>
+      <td>Circle, flower, pleated round</td>
+      <td>How is a gujia prepared?</td>
+      <td>Fried</td>
+      <td>Baked, steamed, boiled</td>
+      <td>Which is an example of a Gujia?</td>
+      <td>https://commons.wikimedia.org/wiki/File:Gujia_dry.JPG</td>
+      <td>https://commons.wikimedia.org/wiki/File:Fried_dumpling_(3337901416).jpg</td>
+      <td>https://commons.wikimedia.org/wiki/File:Xia_jian_jiao.jpg</td>
+      <td>https://commons.wikimedia.org/wiki/File:Deep_Fried_Cholent_Dumpling_(F%C3%BClem%C3%BCle_Restaurant)_(41496749174).jpg</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Erke</td>
+      <td>Main, Musical Instrument</td>
+      <td>&lt;img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Erke_-_Noroeste_Argentino.jpg" width="60"&gt;</td>
+      <td>Where are erkes used?</td>
+      <td>Bolivia</td>
+      <td>Australia, Spain, Ethiopia</td>
+      <td>When is the erke traditionally played?</td>
+      <td>Winter</td>
+      <td>Summer, Spring, Fall</td>
+      <td>What is the exterior of the erke is wrapped in?</td>
+      <td>wool</td>
+      <td>bamboo fiber, sheep skin, cow hide</td>
+      <td>How long can an erke be?</td>
+      <td>7 meters</td>
+      <td>25 cm, 1 m, 10m</td>
+      <td>Which is an example of an erke?</td>
+      <td>https://commons.wikimedia.org/wiki/Category:Erke#/media/File:Erke.jpg</td>
+      <td>https://en.wikipedia.org/wiki/Didgeridoo#/media/File:Didgeridoo_street_player-2.jpg</td>
+      <td>https://commons.wikimedia.org/wiki/File:Monks_during_Ongkor.jpg</td>
+      <td>https://commons.wikimedia.org/wiki/File:Tiba_Safiental.jpg</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Detroit-style pizza</td>
+      <td>Main, food</td>
+      <td>&lt;img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Detroit_Style_Pizza_from_Calphalon_Bread_Pans.png" width="60"&gt;</td>
+      <td>When was the Detroit-style pizza developed?</td>
+      <td>1940s</td>
+      <td>1920s, 1960s, 1980s</td>
+      <td>What type of cheese is used in Detroit-style pizza?</td>
+      <td>Wisconsin brick</td>
+      <td>Mozarella, Cheddar, American</td>
+      <td>What is the traditional shape of a Detroit-style pizza?</td>
+      <td>Rectangle</td>
+      <td>Round, Square, Free-form</td>
+      <td>Where is the sauce placed in a Detroit-style pizza?</td>
+      <td>On-top of the cheese</td>
+      <td>Under the cheese, As a bottom and top layer,</td>
+      <td>What is an example of a Detroit-style pizza?</td>
+      <td>https://commons.wikimedia.org/wiki/File:Detroit_Style_Pizza_in_Lloyds_Detroit_Style_Pan_(cropped).png</td>
+      <td>https://commons.wikimedia.org/wiki/File:Aurelio%27s_Pizza_(1).jpg</td>
+      <td>https://commons.wikimedia.org/wiki/File:Chicago-style_pizza.jpg</td>
+      <td>https://commons.wikimedia.org/wiki/File:Pizza_pan.jpg</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>&lt;img src="nan" width="60"&gt;</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>&lt;img src="nan" width="60"&gt;</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>&lt;img src="nan" width="60"&gt;</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Bagna càuda</td>
+      <td>Main, Overview</td>
+      <td>&lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Bagna_Cauda_a_la_Champaqu%C3%AD_019.jpg/250px-Bagna_Cauda_a_la_Champaqu%C3%AD_019.jpg" width="60"&gt;</td>
+      <td>Which Italian region is Bagna Caoda from?</td>
+      <td>Piedmont</td>
+      <td>Sicily, Sardinia, Apulia</td>
+      <td>What is generally bagna caoda served with?</td>
+      <td>Vegetables</td>
+      <td>Meat, Pasta, Fish</td>
+      <td>Which type of dish is Bagna Cauda?</td>
+      <td>Sauce</td>
+      <td>Pie, Dessert, vegetable</td>
+      <td>Which Color is Bagna Cauda?</td>
+      <td>Beige</td>
+      <td>Red, Green, Black</td>
+      <td>What is an example of Bagna Cauda?</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Bagna_c%C3%A0uda_%282016-01-30%29.jpg/230px-Bagna_c%C3%A0uda_%282016-01-30%29.jpg</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Swiss_fondue.jpg/250px-Swiss_fondue.jpg</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Chocolatefondue.JPG/220px-Chocolatefondue.JPG</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Fondue2.jpg/220px-Fondue2.jpg</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Eucomis</td>
+      <td>Main, Distribution_and_habitat, Cultivation</td>
+      <td>&lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Eucomis_autumnalis_2_cropped.jpg/220px-Eucomis_autumnalis_2_cropped.jpg" width="60"&gt;</td>
+      <td>In which period does the eucomis flower?</td>
+      <td>Spring</td>
+      <td>Winter,Summer,Fall</td>
+      <td>Does Eucomis grow in dry regions?</td>
+      <td>No</td>
+      <td>Yes</td>
+      <td>The eucomis has foliage on top which makes it resemble a pineapple</td>
+      <td>TRUE</td>
+      <td>FALSE</td>
+      <td>What is the shape of eucomis flowers</td>
+      <td>Star</td>
+      <td>Funnel,Tube,Bowl</td>
+      <td>Which of these is an Eucomis?</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Eucomis_bicolor_01.jpg/202px-Eucomis_bicolor_01.jpg</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Lilac_Flower%26Leaves%2C_SC%2C_Vic%2C_13.10.2007.jpg/220px-Lilac_Flower%26Leaves%2C_SC%2C_Vic%2C_13.10.2007.jpg</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/%E0%B4%95%E0%B5%88%E0%B4%A4%E0%B4%9A%E0%B5%8D%E0%B4%9A%E0%B4%95%E0%B5%8D%E0%B4%95.jpg/220px-%E0%B4%95%E0%B5%88%E0%B4%A4%E0%B4%9A%E0%B5%8D%E0%B4%9A%E0%B4%95%E0%B5%8D%E0%B4%95.jpg</td>
+      <td>https://upload.wikimedia.org/wikipedia/commons/2/2d/Ornithogalum_narbonense.jpg</td>
+    </tr>
+  </tbody>
+</table>

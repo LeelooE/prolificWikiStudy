@@ -1,0 +1,79 @@
+<html>
+    <head></head>
+    <body>
+        <h2>
+            <span><strong>{{pageTitle}}</strong></span>
+        </h2>
+        <h2 id='directions'>
+            <span>{{nonVisualQ}}</span>
+        </h2>
+        <div id="nonVisualQ">
+            <div>
+                <input type='radio' name='nonVisual' id='nonVisual_1' value='1'>
+                <label>{{nonVisual1}}</label>
+            </div>
+            <div>
+                <input type='radio' name='nonVisual' id='nonVisual_2' value='2'>
+                <label>{{nonVisual2}}</label>
+            </div>
+            <div>
+                <input type='radio' name='nonVisual' id='nonVisual_3' value='3'>
+                <label>{{nonVisual3}}</label>
+            </div>
+            <div>
+                <input type='radio' name='nonVisual' id='nonVisual_4' value='4'>
+                <label>{{nonVisual4}}</label>
+            </div>
+        </div>
+        <h2 id='directions'>
+            <span>{{visualQ}}</span>
+        </h2>
+        <div id="visualQ">
+            <div>
+                <input type='radio' name='visual' id='visual_1' value='1'>
+                <label>{{visual1}}</label>
+            </div>
+            <div>
+                <input type='radio' name='visual' id='visual_2' value='2'>
+                <label>{{visual2}}</label>
+            </div>
+            <div>
+                <input type='radio' name='visual' id='visual_3' value='3'>
+                <label>{{visual3}}</label>
+            </div>
+            <div>
+                <input type='radio' name='visual' id='visual_4' value='4'>
+                <label>{{visual4}}</label>
+            </div>
+        </div>
+        <h2 id='directions'>
+            <span>{{imageQuestion}}</span>
+            <span>Click on the image to select an answer.</span>
+        </h2>
+        <div id="imageQuestion" >
+            <div class='image_buttons'>
+                <input type='radio' name='image' id='image_1' value='1' class='image_input'>
+                <label for='image_1'><img src={{imageDistractor1}} width={{distractorWidth}} class='image_in_button' id='first_image'/></label>
+            </div>
+            <div class='image_buttons'>
+                <input type='radio' name='image' id='image_2' value='2' class='image_input'>
+                <label for='image_2'><img src={{imageDistractor2}} width={{distractorWidth}} class='image_in_button'/></label>
+            </div>
+            <div class='image_buttons'>
+                <input type='radio' name='image' id='image_3' value='3' class='image_input'>
+                <label for='image_3'><img src={{imageDistractor3}} width={{distractorWidth}} class='image_in_button'/></label>
+            </div>
+            <div class='image_buttons'>
+                <input type='radio' name='image' id='image_4' value='4' class='image_input'>
+                <label for='image_4'><img src={{imageDistractor4}} width={{distractorWidth}} class='image_in_button'/></label>
+            </div>
+        </div>
+        <div id="btn-next-page"></div>
+        <script>
+            $(document).ready(function () {
+                var width = $("#first_image").width() + 25;
+                $("#imageQuestion").css("grid-template-columns", "repeat(auto-fit, minmax(" + width +"px, auto))");
+            });
+        </script>
+    </body>
+</html>

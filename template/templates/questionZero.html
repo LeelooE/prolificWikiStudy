@@ -1,0 +1,375 @@
+<html>
+    <head>
+        <script src="https://kit.fontawesome.com/9c8fb83eb2.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <p id="imgLoad">Loading resources: 0 out of 5 ...</p>
+        <div id="questionZ">
+        <div>
+            <h2 id='directions'>
+                <span>
+                  To start with, let's check your knowledge on a random topic. 
+                  On this page you will see questions about "{{pageTitle}}". 
+                  No clue what this is? (Whaaaat? You don’t know all of Wikipedia??) 
+                  That’s totally fine. Please use your best guess!
+                </span>
+                <span>Once you click on an option, you won't be able to change your answer.</span>
+            </h2>
+        </div>
+        <h2 id='directions'>
+            <span>{{nonVisualQ}}</span>
+        </h2>
+        <div id="nonVisualQ" class={{rightAnswerNonVisual}}>
+            <div>
+                <input type='radio' name='nonVisual' id='nonVisual_1' value='1' class='imageRadio' onclick="nonVisualSelected()">
+                <label class='imageLabel' for='nonVisual_1' id='nonVisualLabel1'>{{nonVisual1}}</label>
+                <i id='checkNonVisual1' class="fas fa-check"></i>
+                <i id='timesNonVisual1' class="fas fa-times"></i>
+                <label id='correctNonVisual1'>Correct</label>
+                <label id='incorrectNonVisual1'>Incorrect</label>
+            </div>
+            <div>
+                <input type='radio' name='nonVisual' id='nonVisual_2' value='2' class='imageRadio' onclick="nonVisualSelected()">
+                <label class='imageLabel' for='nonVisual_2' id='nonVisualLabel2'>{{nonVisual2}}</label>
+                <i id='checkNonVisual2' class="fas fa-check"></i>
+                <i id='timesNonVisual2' class="fas fa-times"></i>
+                <label id='correctNonVisual2'>Correct</label>
+                <label id='incorrectNonVisual2'>Incorrect</label>
+            </div>
+            <div>
+                <input type='radio' name='nonVisual' id='nonVisual_3' value='3' class='imageRadio' onclick="nonVisualSelected()">
+                <label class='imageLabel' for='nonVisual_3' id='nonVisualLabel3'>{{nonVisual3}}</label>
+                <i id='checkNonVisual3' class="fas fa-check"></i>
+                <i id='timesNonVisual3' class="fas fa-times"></i>
+                <label id='correctNonVisual3'>Correct</label>
+                <label id='incorrectNonVisual3'>Incorrect</label>
+            </div>
+            <div>
+                <input type='radio' name='nonVisual' id='nonVisual_4' value='4' class='imageRadio' onclick="nonVisualSelected()">
+                <label class='imageLabel' for='nonVisual_4' id='nonVisualLabel4'>{{nonVisual4}}</label>
+                <i id='checkNonVisual4' class="fas fa-check"></i>
+                <i id='timesNonVisual4' class="fas fa-times"></i>
+                <label id='correctNonVisual4'>Correct</label>
+                <label id='incorrectNonVisual4'>Incorrect</label>
+            </div>
+        </div>
+        <h2 id='directions'>
+            <span>{{visualQ}}</span>
+        </h2>
+        <div id="visualQ" class={{rightAnswerVisual}}>
+            <div>
+                <input type='radio' name='visual' id='visual_1' value='1' class='imageRadio' onclick="visualSelected()">
+                <label class='imageLabel' for='visual_1' id='visualLabel1'>{{visual1}}</label>
+                <i id='checkVisual1' class="fas fa-check"></i>
+                <i id='timesVisual1' class="fas fa-times"></i>
+                <label id='correctVisual1'>Correct</label>
+                <label id='incorrectVisual1'>Incorrect</label>
+            </div>
+            <div>
+                <input type='radio' name='visual' id='visual_2' value='2' class='imageRadio' onclick="visualSelected()">
+                <label class='imageLabel' for='visual_2' id='visualLabel2'>{{visual2}}</label>
+                <i id='checkVisual2' class="fas fa-check"></i>
+                <i id='timesVisual2' class="fas fa-times"></i>
+                <label id='correctVisual2'>Correct</label>
+                <label id='incorrectVisual2'>Incorrect</label>
+            </div>
+            <div>
+                <input type='radio' name='visual' id='visual_3' value='3' class='imageRadio' onclick="visualSelected()">
+                <label class='imageLabel' for='visual_3' id='visualLabel3'>{{visual3}}</label>
+                <i id='checkVisual3' class="fas fa-check"></i>
+                <i id='timesVisual3' class="fas fa-times"></i>
+                <label id='correctVisual3'>Correct</label>
+                <label id='incorrectVisual3'>Incorrect</label>
+            </div>
+            <div>
+                <input type='radio' name='visual' id='visual_4' value='4' class='imageRadio' onclick="visualSelected()">
+                <label class='imageLabel' for='visual_4' id='visualLabel4'>{{visual4}}</label>
+                <i id='checkVisual4' class="fas fa-check"></i>
+                <i id='timesVisual4' class="fas fa-times"></i>
+                <label id='correctVisual4'>Correct</label>
+                <label id='incorrectVisual4'>Incorrect</label>
+            </div>
+        </div>
+        <div id="imageQuestionSlide">
+            <h2 id='directions'>
+                <span>{{imageQuestion}}</span>
+                <span>Click on the image to select an answer.</span>
+            </h2>
+            <div id="imageQ" class={{rightAnswerImage}}>
+                <div class='image_buttons'>
+                    <input type='radio' name='image' id='image_1' value='1' class='image_input' onclick="imageSelected()">
+                    <label for='image_1' id='imageLabel1'>
+                        <img src={{imageDistractor1}} width={{distractorWidth}} class='image_in_button' id='first_image'/>
+                    </label>
+                    <i id='checkImage1' class="fas fa-check"></i>
+                    <i id='timesImage1' class="fas fa-times"></i>
+                    <label id='correctImage1'>Correct</label>
+                    <label id='incorrectImage1'>Incorrect</label>
+                </div>
+                <div class='image_buttons'>
+                    <input type='radio' name='image' id='image_2' value='2' class='image_input' onclick="imageSelected()">
+                    <label for='image_2' id='imageLabel2'><img src={{imageDistractor2}} width={{distractorWidth}} class='image_in_button' id='second_image'/></label>
+                    <i id='checkImage2' class="fas fa-check"></i>
+                    <i id='timesImage2' class="fas fa-times"></i>
+                    <label id='correctImage2'>Correct</label>
+                    <label id='incorrectImage2'>Incorrect</label>
+                </div>
+                <div class='image_buttons'>
+                    <input type='radio' name='image' id='image_3' value='3' class='image_input' onclick="imageSelected()">
+                    <label for='image_3' id='imageLabel3'><img src={{imageDistractor3}} width={{distractorWidth}} class='image_in_button' id='third_image'/></label>
+                    <i id='checkImage3' class="fas fa-check"></i>
+                    <i id='timesImage3' class="fas fa-times"></i>
+                    <label id='correctImage3'>Correct</label>
+                    <label id='incorrectImage3'>Incorrect</label>
+                </div>
+                <div class='image_buttons'>
+                    <input type='radio' name='image' id='image_4' value='4' class='image_input' onclick="imageSelected()">
+                    <label for='image_4' id='imageLabel4'><img src={{imageDistractor4}} width={{distractorWidth}} class='image_in_button' id='fourth_image'/></label>
+                    <i id='checkImage4' class="fas fa-check"></i>
+                    <i id='timesImage4' class="fas fa-times"></i>
+                    <label id='correctImage4'>Correct</label>
+                    <label id='incorrectImage4'>Incorrect</label>
+                </div>
+            </div>
+        </div>
+        <div id="firstArticle">
+            <div id="btn-next-page"></div>
+        </div>
+        </div>
+        <script>
+            function nonVisualSelected() {
+                var classOfDiv = parseInt(document.getElementById("nonVisualQ").className);
+                var labelOne = document.getElementById('nonVisualLabel1').textContent
+                var labelTwo = document.getElementById('nonVisualLabel2').textContent
+                var labelThree = document.getElementById('nonVisualLabel3').textContent
+                var labelFour = document.getElementById('nonVisualLabel4').textContent
+                var correctLabelId = ""
+                var correctIconId = ""
+                if(0 == classOfDiv){
+                    correctLabelId = 'nonVisualLabel1'
+                    correctIconId = 'NonVisual1'
+                } else if(1 == classOfDiv) {
+                    correctLabelId = 'nonVisualLabel2'
+                    correctIconId = 'NonVisual2'
+                } else if(2 == classOfDiv) {
+                    correctLabelId = 'nonVisualLabel3'
+                    correctIconId = 'NonVisual3'
+                } else {
+                    correctLabelId = 'nonVisualLabel4'
+                    correctIconId = 'NonVisual4'
+                }
+                var audioIncorrect = new Audio('audio/incorrect.wav');
+                var audioCorrect = new Audio('audio/correct.wav');
+                if (document.getElementById('nonVisual_1').checked) {
+                    if (0 != classOfDiv) {
+                        audioIncorrect.play();
+                        styleWrongAnswer('nonVisualLabel1', 'NonVisual1')
+                    } else {
+                        audioCorrect.play();
+                    }
+                } else if(document.getElementById('nonVisual_2').checked) {
+                    if (1 != classOfDiv) {
+                        audioIncorrect.play();
+                        styleWrongAnswer('nonVisualLabel2', 'NonVisual2')
+                    } else {
+                        audioCorrect.play();
+                    }
+                } else if(document.getElementById('nonVisual_3').checked) {
+                    if (2 != classOfDiv) {
+                        audioIncorrect.play();
+                        styleWrongAnswer('nonVisualLabel3', 'NonVisual3')
+                    } else {
+                        audioCorrect.play();
+                    }
+                } else {
+                    if (3 != classOfDiv) {
+                        audioIncorrect.play();
+                        styleWrongAnswer('nonVisualLabel4', 'NonVisual4')
+                    } else {
+                        audioCorrect.play();
+                    }
+                }
+                $("#nonVisual_1").attr("disabled", true);
+                $("#nonVisual_2").attr("disabled", true);
+                $("#nonVisual_3").attr("disabled", true);
+                $("#nonVisual_4").attr("disabled", true);
+                styleCorrectAnswer(correctLabelId, correctIconId)
+                //document.getElementById("nextNonVisual").style.visibility='visible'
+            }
+            function visualSelected() {
+                var classOfDiv = parseInt(document.getElementById("visualQ").className);
+                var labelOne = document.getElementById('visualLabel1').textContent
+                var labelTwo = document.getElementById('visualLabel2').textContent
+                var labelThree = document.getElementById('visualLabel3').textContent
+                var labelFour = document.getElementById('visualLabel4').textContent
+                var correctLabelId = ""
+                var correctIconId = ""
+                if(0 == classOfDiv){
+                    correctLabelId = 'visualLabel1'
+                    correctIconId = 'Visual1'
+                } else if(1 == classOfDiv) {
+                    correctLabelId = 'visualLabel2'
+                    correctIconId = 'Visual2'
+                } else if(2 == classOfDiv) {
+                    correctLabelId = 'visualLabel3'
+                    correctIconId = 'Visual3'
+                } else {
+                    correctLabelId = 'visualLabel4'
+                    correctIconId = 'Visual4'
+                }
+                var audioIncorrect = new Audio('audio/incorrect.wav');
+                var audioCorrect = new Audio('audio/correct.wav');
+                
+                if (document.getElementById('visual_1').checked) {
+                    if (0 != classOfDiv) {
+                        audioIncorrect.play();
+                        styleWrongAnswer('visualLabel1', 'Visual1')
+                    } else {
+                        audioCorrect.play();
+                    } 
+                } else if(document.getElementById('visual_2').checked) {
+                    if (1 != classOfDiv) {
+                        audioIncorrect.play();
+                        styleWrongAnswer('visualLabel2', 'Visual2')
+                    } else {
+                        audioCorrect.play();
+                    } 
+                } else if(document.getElementById('visual_3').checked) {
+                    if (2 != classOfDiv) {
+                        audioIncorrect.play();
+                        styleWrongAnswer('visualLabel3', 'Visual3')
+                    } else {
+                        audioCorrect.play();
+                    }
+                } else {
+                    if (3 != classOfDiv) {
+                        audioIncorrect.play();
+                        styleWrongAnswer('visualLabel4', 'Visual4')
+                    } else {
+                        audioCorrect.play();
+                    }
+                }
+                $("#visual_1").attr("disabled", true);
+                $("#visual_2").attr("disabled", true);
+                $("#visual_3").attr("disabled", true);
+                $("#visual_4").attr("disabled", true);
+                styleCorrectAnswer(correctLabelId, correctIconId)
+                //document.getElementById("nextVisual").style.visibility='visible'
+            }
+            function imageSelected() {
+                var classOfDiv = $("#imageQ").attr('class')
+                var labelOne = document.getElementById('first_image').src
+                var labelTwo = document.getElementById('second_image').src
+                var labelThree = document.getElementById('third_image').src
+                var labelFour = document.getElementById('fourth_image').src
+                var correctLabelId = ""
+                var correctIconId = ""
+                if(labelOne == classOfDiv){
+                    correctLabelId = 'first_image'
+                    correctIconId = 'Image1'
+                } else if(labelTwo == classOfDiv) {
+                    correctLabelId = 'second_image'
+                    correctIconId = 'Image2'
+                } else if(labelThree == classOfDiv) {
+                    correctLabelId = 'third_image'
+                    correctIconId = 'Image3'
+                } else {
+                    correctLabelId = 'fourth_image'
+                    correctIconId = 'Image4'
+                }
+                var audioIncorrect = new Audio('audio/incorrect.wav');
+                var audioCorrect = new Audio('audio/correct.wav');
+                styleCorrectAnswer(correctLabelId, correctIconId)
+                if (document.getElementById('image_1').checked) {
+                    if (labelOne != classOfDiv) {
+                        styleWrongAnswer('first_image', 'Image1')
+                        audioIncorrect.play();
+                    } else {
+                        audioCorrect.play();
+                    }
+                } else if(document.getElementById('image_2').checked) {
+                    if (labelTwo != classOfDiv) {
+                        styleWrongAnswer('second_image', 'Image2')
+                        audioIncorrect.play();
+                    } else {
+                        audioCorrect.play();
+                    }
+                } else if(document.getElementById('image_3').checked) {
+                    if (labelThree != classOfDiv) {
+                        styleWrongAnswer('third_image', 'Image3')
+                        audioIncorrect.play();
+                    } else {
+                        audioCorrect.play();
+                    }
+                } else {
+                    if (labelFour != classOfDiv) {
+                        styleWrongAnswer('fourth_image', 'Image4')
+                        audioIncorrect.play();
+                    } else {
+                        audioCorrect.play();
+                    }
+                }
+                $("#image_1").attr("disabled", true);
+                $("#image_2").attr("disabled", true);
+                $("#image_3").attr("disabled", true);
+                $("#image_4").attr("disabled", true);
+                document.getElementById("firstArticle").style.visibility='visible'
+            }
+            function styleCorrectAnswer(labelId, iconId) {
+                var label = document.getElementById(labelId)
+                var icon = document.getElementById('check' + iconId)
+                var text = document.getElementById('correct' + iconId)
+                label.style.border = '3px solid lightgreen'
+                icon.style.display = 'inline'
+                text.style.display = 'inline'
+            }
+            function styleWrongAnswer(labelId, iconId) {
+                var label = document.getElementById(labelId)
+                var icon = document.getElementById('times' + iconId)
+                var text = document.getElementById('incorrect' + iconId)
+                label.style.border = '3px solid lightcoral'
+                icon.style.display = 'inline'
+                text.style.display = 'inline'
+            }
+            function setWidth() {
+                var width = $("#first_image").width() + 25;
+                document.getElementById("imageQ").style.gridTemplateColumns = "repeat(auto-fit, minmax(" + width +"px, auto))";
+            }
+            $(document).ready(function () {
+                setWidth()
+                var imgs = document.images,
+                len = imgs.length,
+                counter = 0;
+
+                [].forEach.call( imgs, function( img ) {
+                    if(img.complete)
+                    incrementCounter();
+                    else
+                    img.addEventListener( 'load', incrementCounter, false );
+                } );
+
+                function incrementCounter() {
+                    counter++;
+                    document.getElementById("imgLoad").textContent = "Loading resources: " + counter + " out of 5 ...";
+                    if ( counter === len ) {
+                        // console.log( 'All images loaded!' );
+                        document.getElementById("imgLoad").style.visibility='hidden'
+                        document.getElementById("questionZ").style.visibility='visible'
+                    }
+                }
+                var third = document.getElementById("nonVisualLabel3").textContent
+                var fourth = document.getElementById("nonVisualLabel4").textContent
+                if (third.length < 1) {
+                    document.getElementById("nonVisualLabel3").style.display = 'none'
+                    document.getElementById("nonVisualLabel4").style.display = 'none'
+                }
+                var third = document.getElementById("visualLabel3").innerHTML
+                var fourth = document.getElementById("visualLabel4").innerHTML
+                if (third.length < 1) {
+                    document.getElementById("visualLabel3").style.display = 'none'
+                    document.getElementById("visualLabel4").style.display = 'none'
+                }
+            });
+        </script>
+    </body>
+</html>

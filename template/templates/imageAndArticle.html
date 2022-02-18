@@ -1,0 +1,157 @@
+<html>
+    <head></head>
+    <body>
+        <p id="imgLoad">Loading resources: 0 out of 2 ...</p>
+        <div id="artImage">
+        <div>
+            <h2 id='directions'>
+                <span>
+                  Here's the first article that teaches you about "{{pageTitle}}". 
+                  On the next step we'll ask you some questions about this topic.
+                </span>
+            </h2>
+        </div>
+        <div id="imageAndArticleSlide">
+            <h1 id='articleTitle'>
+                <span>{{pageTitle}}</span>
+            </h1>
+            <div id='article'>
+                <div id='textContainer'>
+                    <div id='imageContainer'>
+                        {{#if displayImage}}
+                            <div id='mainImage'><img rel="prefetch" id='mainImageTag' src={{imageURL}} width={{mainImageWidth}}/></div>
+                        {{else}}
+                            <div id='mainImage'></div>
+                        {{/if}}
+                    </div>
+                    {{#if four}}
+                        <p class='subText' id="firstSec">
+                            {{firstSection}}
+                        </p>
+                        <h2 class='subTitle'>
+                            <span>{{secondSectionTitle}}</span>
+                        </h2>
+                        <p class='subText' id="secondSec">{{secondSection}}</p>
+                        <h2 class='subTitle'>
+                            <span>{{thirdSectionTitle}}</span>
+                        </h2>
+                        <p class='subText' id="thirdSec">{{thirdSection}}</p>
+                        <h2 class='subTitle'>
+                            <span>{{fourthSectionTitle}}</span>
+                        </h2>
+                        <p class='subText' id="fourthSec">{{fourthSection}}</p>
+                    {{else}}
+                        {{#if three}}
+                            <p class='subText' id="firstSec">
+                                {{firstSection}}
+                            </p>
+                            <h2 class='subTitle'>
+                                <span>{{secondSectionTitle}}</span>
+                            </h2>
+                            <p class='subText' id="secondSec">{{secondSection}}</p>
+                            <h2 class='subTitle'>
+                                <span>{{thirdSectionTitle}}</span>
+                            </h2>
+                            <p class='subText' id="thirdSec">{{thirdSection}}</p>
+                        {{else}}
+                            {{#if two}}
+                                <p class='subText' id="firstSec">
+                                    {{firstSection}}
+                                </p>
+                                <h2 class='subTitle'>
+                                    <span>{{secondSectionTitle}}</span>
+                                </h2>
+                                <p class='subText' id="secondSec">{{secondSection}}</p>
+                            {{else}}
+                                <p class='subText' id="firstSec">{{firstSection}}</p>
+                            {{/if}}
+                        {{/if}}
+                    {{/if}}
+                </div>
+            </div>
+            <div id='article-next-button'>
+                <div id="btn-next-page"></div>
+            </div>
+        </div>
+        </div>
+        <script>
+            $(document).ready(function () {
+
+                var text = document.getElementById("firstSec").innerHTML
+                //document.getElementById("firstSec").innerHTML = text.replace(/\n/g, "<br style=\"display:block; height:1em\">");
+                arText = text.split(/\n/g);
+                    final = ""
+                    for (var i = 0; i < arText.length; i++) { 
+                        final = final + "<p>" + arText[i] + "<\p>"; 
+                    }
+                    document.getElementById("firstSec").innerHTML = final;
+                document.getElementById("firstSec").textContent = document.getElementById("firstSec").textContent.trim()
+                if (document.getElementById("secondSec")) {
+                    text = document.getElementById("secondSec").innerHTML
+                    //document.getElementById("secondSec").innerHTML = text.replace(/\n/g, "<br style=\"display:block; height:1em\">");
+                    arText = text.split(/\n/g);
+                    final = ""
+                    for (var i = 0; i < arText.length; i++) { 
+                        final = final + "<p>" + arText[i] + "<\p>"; 
+                    }
+                    document.getElementById("secondSec").innerHTML = final;
+                }
+                if (document.getElementById("thirdSec")) {
+                    text = document.getElementById("thirdSec").innerHTML
+                    //document.getElementById("thirdSec").innerHTML = text.replace(/\n/g, "<br style=\"display:block; height:1em\">");
+                    arText = text.split(/\n/g);
+                    final = ""
+                    for (var i = 0; i < arText.length; i++) { 
+                        final = final + "<p>" + arText[i] + "<\p>"; 
+                    }
+                    document.getElementById("thirdSec").innerHTML = final;
+                }
+                if (document.getElementById("fourthSec")) {
+                    text = document.getElementById("fourthSec").innerHTML
+                    //document.getElementById("fourthSec").innerHTML = text.replace(/\n/g, "<br style=\"display:block; height:1em\">");
+                    arText = text.split(/\n/g);
+                    final = ""
+                    for (var i = 0; i < arText.length; i++) { 
+                        final = final + "<p>" + arText[i] + "<\p>"; 
+                    }
+                    document.getElementById("fourthSec").innerHTML = final;
+                }
+
+                $('#imageContainer div').each(function() {
+                    if ($(this).find('img').length) {
+                        // there is an image in this div, do something...
+                        var imageWidth = $("#mainImageTag").width() + 10;
+                        var totalWidth = ($(window).width() * 90) / 100;
+                        var textWidth = totalWidth  - imageWidth - 20
+                        if (textWidth >= imageWidth) {
+                            $("#textContainer").css("margin-top", ".5%");
+                            $("#imageContainer").css("float", "right");
+                            $("#imageContainer").css("clear", "right");
+                        }
+                    }
+                });
+
+                var imgs = document.images,
+                len = imgs.length,
+                counter = 0;
+
+                [].forEach.call( imgs, function( img ) {
+                    if(img.complete)
+                    incrementCounter();
+                    else
+                    img.addEventListener( 'load', incrementCounter, false );
+                } );
+
+                function incrementCounter() {
+                    counter++;
+                    document.getElementById("imgLoad").textContent = "Loading resources: " + counter + " out of 2 ...";
+                    if ( counter === len ) {
+                        // console.log( 'All images loaded!' );
+                        document.getElementById("imgLoad").style.visibility='hidden'
+                        document.getElementById("artImage").style.visibility='visible'
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
